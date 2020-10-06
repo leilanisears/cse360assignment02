@@ -11,12 +11,17 @@ public class AddingMachine {
 	 * the total value of all operations
 	 */
 	  private int total;
+	  /**
+	   * the current history of all operations made by the AddingMachine
+	   */
+	  private String history;
 	  
 	  /**
 	   * creates an instance of an AddingMachine
 	   */
 	  public AddingMachine () {
 	    total = 0;  // not needed - included for clarity
+	    history = 0 + " ";
 	  }
 	  
 	  /**
@@ -24,33 +29,39 @@ public class AddingMachine {
 	   * @return the current value of total
 	   */
 	  public int getTotal () {
-	    return 0;
+	    return total;
 	  }
 	  
 	  /**
-	   * Method will add the given value to total
+	   * Method will add the given value to total and updates the history
 	   * @param value adds this value to total
 	   */
 	  public void add (int value) {
+		  total = total + value;
+		  history = history + " " + "+" + " " + value + " ";
 	  }
 	 /**
-	  * Method will subtract the given value from the total
+	  * Method will subtract the given value from the total and updates the history
 	  * @param value subtracts this value from the total
 	  */
 	  public void subtract (int value) {
+		  total = total - value;
+		  history = history + " " + "-" + " " + value + " ";
 	  }
 	  
 	  /**
-	   * current implementation returns an empty string
-	   * @return an empty string
+	   * re
+	   * @return a string of all operations made
 	   */
 	  public String toString () {
-	    return "";
+	    return history;
 	  }
 	  
 	  /**
-	   * current implementation is undeveloped, future development will set total to 0
+	   * will set history to a blank string and the total to 0
 	   */
 	  public void clear() {
+		  history = "";
+		  total = 0;
 	  }
 	}
